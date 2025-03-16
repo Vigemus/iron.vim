@@ -1,18 +1,27 @@
 ## iron.vim
 ![Demo](assets/demo.gif)
 
+### Summary 
+I am often working in remote Linux terminals where installing nvim is either
+impractical, time-consuming or restricted. However, I still need access to a
+quick and efficient REPL. Since `vim` is widely available across Unix and Linux
+systems, I ported/rewrote iron.nvim to Vimscript.  `iron.nvim` users will see
+that the configuration of `iron.vim` is quite similar, as well as notice that
+the functionality parallels quite well that of `iron.nvim`.
+
+
 ## How to install
 To install, you may doing the following
 ```bash
-mkdir -p ~/.vim/pack/nickeisenberg/start
-cd ~/.vim/pack/nickeisenberg/start
-git clone https://github.com/nickeisenberg/iron.vim.git
+mkdir -p ~/.vim/pack/Vigemus/start
+cd ~/.vim/pack/Vigemus/start
+git clone https://github.com/Vigemus/iron.vim.git
 ```
 
 If you prefer to use a package manager, such as vim plug, you may do the
 following instead
 ```vimscript
-  Plug 'nickeisenberg/iron.vim'
+Plug 'Vigemus/iron.vim'
 ```
 
 ## How to configure
@@ -43,6 +52,10 @@ if !empty($VIRTUAL_ENV)
 else
   let python_def = "python3"
 endif
+
+let g:iron_repl_def = {
+  \ "python": python_def,
+\ }
 ```
 
 The above checks if a virtual enviornment is activated, and if it is then
@@ -59,7 +72,7 @@ percent of the size of the current buffer to be used at the size of the split.
 let g:iron_repl_open_cmd = {
   \ 'vertical': iron#view#split('vertical rightbelow', 0.4),
   \ 'horizontal': iron#view#split('rightbelow', 0.25),
-  \ '<name>': iron#view#split('<split_cmd>', <size>),
+  \ '<name>': iron#view#split('<split_cmd>', <size>),  " see g:iron_keymaps below
 \}
 ```
 
@@ -76,9 +89,8 @@ let g:iron_repl_open_cmd = {
 ```
 
 ### `g:iron_keymaps`
-Iron will not set keymaps by default and they will need to 
-provides a set of default named operations that can have key maps assigned
-to.
+`iron` will not set keymaps by default, however, `iron` provides a set of
+default named operations that the user can assign keymaps to.
 
 ```vimscript
 let g:iron_keymaps = {
@@ -118,3 +130,7 @@ If you find yourself doing some debugging and you are curious what is being
 sent to the REPL, you can set `g:iron_repl_debug_log = 1`. This will produce a
 log file at `~/.local/log/iron_<filetype>.log` and each time you send text to
 the REPL, this same text will be appened to the end of the log file.
+
+
+### Similar plugins
+* [vim-slime](https://github.com/jpalardy/vim-slime) 
