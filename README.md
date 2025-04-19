@@ -107,6 +107,7 @@ let g:iron_keymaps = {
   \ "send_file": "<leader>sf",
   \ "send_cancel": "<leader>sc",
   \ "send_blank_line": "<leader>s<CR>",
+  \ "clear": "<leader>rc",
 \ }
 ```
 

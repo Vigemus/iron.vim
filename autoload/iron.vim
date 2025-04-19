@@ -31,6 +31,10 @@ function! iron#setup()
       \ "n",
       \ ":call iron#core#send(\"\\r\")<CR>",
       \ ],
+    \ "clear": [
+      \ "n",
+      \ ":call iron#core#send(nr2char(12))<CR>",
+      \ ],
     \ }
 
   command! IronRepl call iron#core#toggle_repl('toggle')
