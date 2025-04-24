@@ -8,13 +8,15 @@ function! iron#view#fix_all_windows()
     " if getbufvar(buf, '&buftype') == 'terminal'
     "   continue
     " endif
-    for win in win_findbuf(buf)
-      call win_execute(win, 'setlocal winfixwidth winfixheight')
-    endfor
+    if v:version >= 801
+      for win in win_findbuf(buf)
+        call win_execute(win, 'setlocal winfixwidth winfixheight')
+      endfor
+    endif
   endfor
 endfunction
 
- 
+
 function! iron#view#split(cmd, size)
   let self = {"cmd": a:cmd, "size": a:size}
 
