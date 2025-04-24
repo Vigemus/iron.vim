@@ -24,7 +24,7 @@ function! iron#view#split(cmd, size)
     else
       let size = winheight(0) * self["size"]
     endif
-    return self["cmd"] . " " . size
+    return self["cmd"] . " " . string(size)
   endfunction
 
   return self
