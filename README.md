@@ -1,14 +1,7 @@
 ## iron.vim
 ![Demo](assets/demo.gif)
 
-### Summary 
-I am often working in remote Linux terminals where installing nvim is either
-impractical, time-consuming or restricted. However, I still need access to a
-quick and efficient REPL. Since `vim` is widely available across Unix and Linux
-systems, I ported/rewrote iron.nvim to Vimscript.  `iron.nvim` users will see
-that the configuration of `iron.vim` is quite similar, as well as notice that
-the functionality parallels quite well that of `iron.nvim`.
-
+A vimscript rewrite  of `iron.nvim`.  
 
 ## How to install
 To install, you may doing the following
