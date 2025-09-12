@@ -1,7 +1,8 @@
 ## iron.vim
-![Demo](assets/demo.gif)
 
 A vimscript rewrite  of `iron.nvim`.  
+
+![Demo](assets/demo.gif)
 
 ## How to install
 To install, you may doing the following
