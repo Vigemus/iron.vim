@@ -3,10 +3,14 @@ if index(keys(g:iron_repl_def), "python") == -1
     let venv_path = $VIRTUAL_ENV
     let python_def = [
       \ "source " . venv_path . "/bin/activate",
+      \ "export PYTHON_BASIC_REPL=1",
       \ "python3",
     \ ]
   else
-    let python_def = ["python3"]
+    let python_def = [
+      \ "export PYTHON_BASIC_REPL=1",
+      \ "python3"
+    \ ]
   endif
 
   let g:iron_repl_def["python"] = python_def
